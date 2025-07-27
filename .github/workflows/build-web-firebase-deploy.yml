@@ -33,4 +33,4 @@ jobs:
 
       # 🚀 Step 4: Deploy to Firebase Hosting
       - name: Deploy to Firebase Hosting
-        run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase deploy --only hosting --project e-store-1c5e3 --token ${{ secrets.FIREBASE_TOKEN }}
