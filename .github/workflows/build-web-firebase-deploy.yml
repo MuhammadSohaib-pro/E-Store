@@ -3,7 +3,7 @@ name: Build and Deploy to Firebase
 on:
   push:
     branches:
-      - main  # 🚀 Trigger only when code is pushed to the main branch
+      - main # 🚀 Trigger only when code is pushed to the main branch
 
 jobs:
   build-and-deploy:
@@ -14,13 +14,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # 🏗️ Step 2: Build Flutter web using cedvdb/action-flutter-build-web
-      # Includes dart-define values injected from GitHub secrets
-      - name: Build Flutter Web
-        uses: cedvdb/action-flutter-build-web@v1
+        # 🏗️ Step 2: Setup Flutter and Build Flutter Web (Flutter 3.29.3)
+      - name: Install Flutter 3.29.3
+        uses: subosito/flutter-action@v2
         with:
-          build-cmd: flutter build web --release --dart-define=PUBLISHABLE_KEY=${{ secrets.PUBLISHABLE_KEY }} --dart-define=SECRET_KEY=${{ secrets.SECRET_KEY }}
-          working-directory: ./
+          flutter-version: "3.29.3"
+
+      - name: Get Dependencies
+        run: flutter pub get
+
+      - name: Build Flutter Web
+        run: flutter build web --release --dart-define=PUBLISHABLE_KEY=${{ secrets.PUBLISHABLE_KEY }} --dart-define=SECRET_KEY=${{ secrets.SECRET_KEY }}
 
       # 🔥 Step 3: Install Firebase CLI
       - name: Install Firebase CLI
