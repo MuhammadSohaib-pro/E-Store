@@ -1,0 +1,32 @@
+name: Build and Deploy to Firebase
+
+on:
+  push:
+    branches:
+      - main  # 🚀 Trigger only when code is pushed to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 📥 Step 1: Checkout source code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # 🏗️ Step 2: Build Flutter web using cedvdb/action-flutter-build-web
+      # Includes dart-define values injected from GitHub secrets
+      - name: Build Flutter Web
+        uses: cedvdb/action-flutter-build-web@v1
+        with:
+          build-cmd: flutter build web --release --dart-define=PUBLISHABLE_KEY=${{ secrets.PUBLISHABLE_KEY }} --dart-define=SECRET_KEY=${{ secrets.SECRET_KEY }}
+          working-directory: ./
+
+      # 🔥 Step 3: Install Firebase CLI
+      - name: Install Firebase CLI
+        run: |
+          curl -sL https://firebase.tools | bash
+
+      # 🚀 Step 4: Deploy to Firebase Hosting
+      - name: Deploy to Firebase Hosting
+        run: firebase deploy --only hosting --token ${{ secrets.FIREBASE_TOKEN }}
