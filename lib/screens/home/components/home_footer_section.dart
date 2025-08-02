@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
+import 'package:e_store/utils/utils.dart';
 
 class HomeFooterSection extends StatelessWidget {
   const HomeFooterSection({super.key});

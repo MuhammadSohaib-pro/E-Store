@@ -1,5 +1,5 @@
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/services/services.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/services/services.dart';
 
 class SearchRepository {
   final List<String> _searchHistory = [];
@@ -22,19 +22,24 @@ class SearchRepository {
   Future<List<Product>> searchProducts(String query) async {
     // Simulate API delay
     await Future.delayed(const Duration(milliseconds: 300));
-    
+
     if (query.isEmpty) {
       return ProductService.getAllProducts();
     }
 
     final allProducts = ProductService.getAllProducts();
-    
-    return allProducts.where((product) =>
-        product.name.toLowerCase().contains(query.toLowerCase()) ||
-        product.description.toLowerCase().contains(query.toLowerCase()) ||
-        product.category.toLowerCase().contains(query.toLowerCase()) ||
-        product.tags.any((tag) => tag.toLowerCase().contains(query.toLowerCase()))
-    ).toList();
+
+    return allProducts
+        .where(
+          (product) =>
+              product.name.toLowerCase().contains(query.toLowerCase()) ||
+              product.description.toLowerCase().contains(query.toLowerCase()) ||
+              product.category.toLowerCase().contains(query.toLowerCase()) ||
+              product.tags.any(
+                (tag) => tag.toLowerCase().contains(query.toLowerCase()),
+              ),
+        )
+        .toList();
   }
 
   Future<List<Product>> filterProducts(
@@ -42,14 +47,16 @@ class SearchRepository {
     List<String> selectedFilters,
   ) async {
     await Future.delayed(const Duration(milliseconds: 100));
-    
+
     if (selectedFilters.isEmpty) {
       return products;
     }
 
-    return products.where((product) =>
-        selectedFilters.contains(product.category.toLowerCase())
-    ).toList();
+    return products
+        .where(
+          (product) => selectedFilters.contains(product.category.toLowerCase()),
+        )
+        .toList();
   }
 
   Future<List<Product>> sortProducts(
@@ -57,7 +64,7 @@ class SearchRepository {
     String sortBy,
   ) async {
     await Future.delayed(const Duration(milliseconds: 100));
-    
+
     final sortedProducts = List<Product>.from(products);
 
     switch (sortBy) {
@@ -84,7 +91,7 @@ class SearchRepository {
 
   Future<void> addToSearchHistory(String query) async {
     await Future.delayed(const Duration(milliseconds: 50));
-    
+
     if (query.length > 2 && !_searchHistory.contains(query)) {
       _searchHistory.insert(0, query);
       if (_searchHistory.length > 10) {
@@ -100,33 +107,39 @@ class SearchRepository {
 
   Future<List<String>> getSearchSuggestions(String query) async {
     await Future.delayed(const Duration(milliseconds: 200));
-    
+
     if (query.isEmpty) {
       return _suggestedSearches.take(6).toList();
     }
 
     // Filter suggestions based on query
-    final filteredSuggestions = _suggestedSearches
-        .where((suggestion) => 
-            suggestion.toLowerCase().contains(query.toLowerCase()))
-        .take(5)
-        .toList();
+    final filteredSuggestions =
+        _suggestedSearches
+            .where(
+              (suggestion) =>
+                  suggestion.toLowerCase().contains(query.toLowerCase()),
+            )
+            .take(5)
+            .toList();
 
     // Add some product-based suggestions
     final products = ProductService.getAllProducts();
-    final productSuggestions = products
-        .where((product) => 
-            product.name.toLowerCase().contains(query.toLowerCase()))
-        .map((product) => product.name.toLowerCase())
-        .take(3)
-        .toList();
+    final productSuggestions =
+        products
+            .where(
+              (product) =>
+                  product.name.toLowerCase().contains(query.toLowerCase()),
+            )
+            .map((product) => product.name.toLowerCase())
+            .take(3)
+            .toList();
 
     return [...filteredSuggestions, ...productSuggestions];
   }
 
   Future<List<String>> getTrendingSearches() async {
     await Future.delayed(const Duration(milliseconds: 200));
-    
+
     // Mock trending searches based on popularity
     return [
       'bluetooth headphones',

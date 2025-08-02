@@ -1,4 +1,4 @@
-import 'package:e_commerece_website_testing/services/services.dart';
+import 'package:e_store/services/services.dart';
 import 'package:universal_html/html.dart' as html;
 import 'package:universal_html/js_util.dart' as js_util;
 import 'package:flutter/material.dart';

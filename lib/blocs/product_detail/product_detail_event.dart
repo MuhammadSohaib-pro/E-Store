@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/models/models.dart';
 
 abstract class ProductDetailEvent extends Equatable {
   @override
@@ -17,18 +17,18 @@ class ProductDetailLoadRequested extends ProductDetailEvent {
 
 class ProductQuantityChanged extends ProductDetailEvent {
   final int quantity;
-  
+
   ProductQuantityChanged({required this.quantity});
-  
+
   @override
   List<Object?> get props => [quantity];
 }
 
 class ProductImageChanged extends ProductDetailEvent {
   final int imageIndex;
-  
+
   ProductImageChanged({required this.imageIndex});
-  
+
   @override
   List<Object?> get props => [imageIndex];
 }
@@ -40,9 +40,9 @@ class ProductDescriptionToggled extends ProductDetailEvent {}
 class ProductAddedToCart extends ProductDetailEvent {
   final Product product;
   final int quantity;
-  
+
   ProductAddedToCart({required this.product, required this.quantity});
-  
+
   @override
   List<Object?> get props => [product, quantity];
 }
@@ -50,12 +50,12 @@ class ProductAddedToCart extends ProductDetailEvent {
 class RelatedProductsLoadRequested extends ProductDetailEvent {
   final String category;
   final String excludeProductId;
-  
+
   RelatedProductsLoadRequested({
     required this.category,
     required this.excludeProductId,
   });
-  
+
   @override
   List<Object?> get props => [category, excludeProductId];
 }

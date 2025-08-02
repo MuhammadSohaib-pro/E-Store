@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/models/models.dart';
 
 abstract class SearchState extends Equatable {
   @override
@@ -80,14 +80,14 @@ class SearchLoaded extends SearchState {
 
   @override
   List<Object?> get props => [
-        query,
-        searchResults,
-        filteredResults,
-        selectedFilters,
-        sortBy,
-        isSearching,
-        hasSearched,
-      ];
+    query,
+    searchResults,
+    filteredResults,
+    selectedFilters,
+    sortBy,
+    isSearching,
+    hasSearched,
+  ];
 }
 
 class SearchError extends SearchState {
@@ -104,10 +104,7 @@ class SearchNoResults extends SearchState {
   final String query;
   final List<String> suggestedSearches;
 
-  SearchNoResults({
-    required this.query,
-    required this.suggestedSearches,
-  });
+  SearchNoResults({required this.query, required this.suggestedSearches});
 
   @override
   List<Object?> get props => [query, suggestedSearches];

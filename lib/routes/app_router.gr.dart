@@ -10,20 +10,14 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
-import 'package:e_commerece_website_testing/screens/cart/cart_screen.dart'
-    as _i1;
-import 'package:e_commerece_website_testing/screens/checkout/checkout_screen.dart'
-    as _i2;
-import 'package:e_commerece_website_testing/screens/home/home_screen.dart'
-    as _i3;
-import 'package:e_commerece_website_testing/screens/order_success/order_success_screen.dart'
-    as _i4;
-import 'package:e_commerece_website_testing/screens/product_detail/product_detail_screen.dart'
+import 'package:e_store/screens/cart/cart_screen.dart' as _i1;
+import 'package:e_store/screens/checkout/checkout_screen.dart' as _i2;
+import 'package:e_store/screens/home/home_screen.dart' as _i3;
+import 'package:e_store/screens/order_success/order_success_screen.dart' as _i4;
+import 'package:e_store/screens/product_detail/product_detail_screen.dart'
     as _i5;
-import 'package:e_commerece_website_testing/screens/products/product_screen.dart'
-    as _i6;
-import 'package:e_commerece_website_testing/screens/search/search_screen.dart'
-    as _i7;
+import 'package:e_store/screens/products/product_screen.dart' as _i6;
+import 'package:e_store/screens/search/search_screen.dart' as _i7;
 import 'package:flutter/material.dart' as _i9;
 
 /// generated route for

@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/blocs/home/home_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/home/home_event.dart';
-import 'package:e_commerece_website_testing/blocs/home/home_state.dart';
-import 'package:e_commerece_website_testing/screens/home/components/components.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
-import 'package:e_commerece_website_testing/widgets/widgets.dart';
+import 'package:e_store/blocs/home/home_bloc.dart';
+import 'package:e_store/blocs/home/home_event.dart';
+import 'package:e_store/blocs/home/home_state.dart';
+import 'package:e_store/screens/home/components/components.dart';
+import 'package:e_store/utils/utils.dart';
+import 'package:e_store/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,21 +1,21 @@
-import 'package:e_commerece_website_testing/blocs/cart/cart_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_event.dart';
-import 'package:e_commerece_website_testing/blocs/home/home_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/home/home_event.dart';
-import 'package:e_commerece_website_testing/blocs/newsletter/newsletter_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/product_detail/product_detail_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/products/products_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/products/products_event.dart';
-import 'package:e_commerece_website_testing/blocs/search/search_bloc.dart';
-import 'package:e_commerece_website_testing/firebase_options.dart';
-import 'package:e_commerece_website_testing/repositories/cart_repository.dart';
-import 'package:e_commerece_website_testing/repositories/home_repository.dart';
-import 'package:e_commerece_website_testing/repositories/product_detail_repository.dart';
-import 'package:e_commerece_website_testing/repositories/products_repository.dart';
-import 'package:e_commerece_website_testing/repositories/search_repository.dart';
-import 'package:e_commerece_website_testing/routes/app_router.dart';
-import 'package:e_commerece_website_testing/services/services.dart';
+import 'package:e_store/blocs/cart/cart_bloc.dart';
+import 'package:e_store/blocs/cart/cart_event.dart';
+import 'package:e_store/blocs/home/home_bloc.dart';
+import 'package:e_store/blocs/home/home_event.dart';
+import 'package:e_store/blocs/newsletter/newsletter_bloc.dart';
+import 'package:e_store/blocs/product_detail/product_detail_bloc.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_bloc.dart';
+import 'package:e_store/blocs/products/products_bloc.dart';
+import 'package:e_store/blocs/products/products_event.dart';
+import 'package:e_store/blocs/search/search_bloc.dart';
+import 'package:e_store/firebase_options.dart';
+import 'package:e_store/repositories/cart_repository.dart';
+import 'package:e_store/repositories/home_repository.dart';
+import 'package:e_store/repositories/product_detail_repository.dart';
+import 'package:e_store/repositories/products_repository.dart';
+import 'package:e_store/repositories/search_repository.dart';
+import 'package:e_store/routes/app_router.dart';
+import 'package:e_store/services/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +26,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // Load environment variables
+  // TODO:: Before running the project Uncomment the assets section for .env
   if (kDebugMode) {
     await dotenv.load(fileName: ".env");
   }

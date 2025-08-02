@@ -1,5 +1,5 @@
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_state.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_bloc.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

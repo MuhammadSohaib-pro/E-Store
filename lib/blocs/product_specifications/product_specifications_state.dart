@@ -1,4 +1,4 @@
-import 'package:e_commerece_website_testing/repositories/product_detail_repository.dart';
+import 'package:e_store/repositories/product_detail_repository.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ProductSpecificationsState extends Equatable {

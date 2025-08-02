@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/models/product.dart';
+import 'package:e_store/models/product.dart';
 import 'package:flutter/material.dart';
 
 class RelatedProductsSection extends StatelessWidget {

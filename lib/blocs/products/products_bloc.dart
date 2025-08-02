@@ -1,6 +1,6 @@
-import 'package:e_commerece_website_testing/blocs/products/products_event.dart';
-import 'package:e_commerece_website_testing/blocs/products/products_state.dart';
-import 'package:e_commerece_website_testing/repositories/products_repository.dart';
+import 'package:e_store/blocs/products/products_event.dart';
+import 'package:e_store/blocs/products/products_state.dart';
+import 'package:e_store/repositories/products_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
@@ -38,7 +38,6 @@ class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
     emit(currentState.copyWith(isRefreshing: true));
 
     try {
-
       // Reload all data
       final allProducts = await _productRepository.getAllProducts();
 

@@ -1,15 +1,15 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_event.dart';
-import 'package:e_commerece_website_testing/blocs/product_detail/product_detail_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/product_detail/product_detail_event.dart';
-import 'package:e_commerece_website_testing/blocs/product_detail/product_detail_state.dart';
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_event.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/screens/product_detail/components/components.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
-import 'package:e_commerece_website_testing/widgets/widgets.dart';
+import 'package:e_store/blocs/cart/cart_bloc.dart';
+import 'package:e_store/blocs/cart/cart_event.dart';
+import 'package:e_store/blocs/product_detail/product_detail_bloc.dart';
+import 'package:e_store/blocs/product_detail/product_detail_event.dart';
+import 'package:e_store/blocs/product_detail/product_detail_state.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_bloc.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_event.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/screens/product_detail/components/components.dart';
+import 'package:e_store/utils/utils.dart';
+import 'package:e_store/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

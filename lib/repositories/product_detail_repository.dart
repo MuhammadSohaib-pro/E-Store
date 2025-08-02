@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/services/services.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/services/services.dart';
 
 class ProductDetailRepository {
   final Set<String> _favoriteProductIds = {};
@@ -8,6 +8,7 @@ class ProductDetailRepository {
   Future<List<String>> getProductImages(String productId) async {
     return ProductService.getProductImagesById(productId);
   }
+
   Future<Product> getProductById(String productId) async {
     await Future.delayed(const Duration(milliseconds: 300));
     return ProductService.getProductById(productId);

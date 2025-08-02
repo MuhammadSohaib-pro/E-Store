@@ -1,4 +1,4 @@
-import 'package:e_commerece_website_testing/screens/search/components/components.dart';
+import 'package:e_store/screens/search/components/components.dart';
 import 'package:flutter/material.dart';
 
 class SearchEmptyWidget extends StatelessWidget {
@@ -42,7 +42,11 @@ class SearchEmptyWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            _buildChipsList(searchHistory, onHistoryItemSelected, isHistory: true),
+            _buildChipsList(
+              searchHistory,
+              onHistoryItemSelected,
+              isHistory: true,
+            ),
             const SizedBox(height: 32),
           ],
           _buildSectionHeader(context, 'Trending Searches', Icons.trending_up),
@@ -68,10 +72,7 @@ class SearchEmptyWidget extends StatelessWidget {
           title,
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        if (action != null) ...[
-          const Spacer(),
-          action,
-        ],
+        if (action != null) ...[const Spacer(), action],
       ],
     );
   }
@@ -84,13 +85,14 @@ class SearchEmptyWidget extends StatelessWidget {
     return Wrap(
       spacing: 8,
       runSpacing: 8,
-      children: items.take(6).map((item) {
-        return SearchChip(
-          text: item,
-          isHistory: isHistory,
-          onTap: () => onSelected(item),
-        );
-      }).toList(),
+      children:
+          items.take(6).map((item) {
+            return SearchChip(
+              text: item,
+              isHistory: isHistory,
+              onTap: () => onSelected(item),
+            );
+          }).toList(),
     );
   }
 }

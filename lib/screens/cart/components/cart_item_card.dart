@@ -1,4 +1,4 @@
-import 'package:e_commerece_website_testing/models/cart_item.dart';
+import 'package:e_store/models/cart_item.dart';
 import 'package:flutter/material.dart';
 
 class CartItemCard extends StatelessWidget {
@@ -85,19 +85,13 @@ class CartItemCard extends StatelessWidget {
       children: [
         Text(
           item.product.name,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 4),
         Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 8,
-            vertical: 4,
-          ),
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
           decoration: BoxDecoration(
             color: Colors.grey.shade100,
             borderRadius: BorderRadius.circular(6),
@@ -114,10 +108,7 @@ class CartItemCard extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           '\$${item.product.price.toStringAsFixed(2)} each',
-          style: TextStyle(
-            fontSize: 14,
-            color: Colors.grey.shade600,
-          ),
+          style: TextStyle(fontSize: 14, color: Colors.grey.shade600),
         ),
         if (!isDesktop) ...[
           const SizedBox(height: 12),
@@ -145,10 +136,7 @@ class CartItemCard extends StatelessWidget {
             ),
             TextButton.icon(
               onPressed: onRemove,
-              icon: const Icon(
-                Icons.delete_outline,
-                size: 16,
-              ),
+              icon: const Icon(Icons.delete_outline, size: 16),
               label: const Text('Remove'),
               style: TextButton.styleFrom(
                 foregroundColor: Colors.red.shade600,
@@ -194,9 +182,10 @@ class CartItemCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
-            onPressed: item.quantity > 1 
-                ? () => onQuantityChanged(item.quantity - 1) 
-                : null,
+            onPressed:
+                item.quantity > 1
+                    ? () => onQuantityChanged(item.quantity - 1)
+                    : null,
             icon: const Icon(Icons.remove, size: 18),
             constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
             splashRadius: 20,

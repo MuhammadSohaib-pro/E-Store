@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/services/services.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/services/services.dart';
 
 class HomeRepository {
   final Set<String> _subscribedEmails = {};
@@ -14,7 +14,6 @@ class HomeRepository {
     await Future.delayed(const Duration(milliseconds: 500));
     return ProductService.getHeroImages();
   }
-
 
   Future<HomeStatistics> getHomeStatistics() async {
     await Future.delayed(const Duration(milliseconds: 400));
@@ -111,5 +110,4 @@ class HomeRepository {
         )
         .toList();
   }
-
 }

@@ -1,7 +1,7 @@
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_event.dart';
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_state.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_event.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:e_commerece_website_testing/repositories/product_detail_repository.dart';
+import 'package:e_store/repositories/product_detail_repository.dart';
 
 class ProductSpecificationsBloc
     extends Bloc<ProductSpecificationsEvent, ProductSpecificationsState> {

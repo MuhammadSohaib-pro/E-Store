@@ -1,5 +1,5 @@
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class HomeQuickStats extends StatelessWidget {

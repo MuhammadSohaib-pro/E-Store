@@ -1,5 +1,5 @@
-import 'package:e_commerece_website_testing/models/product.dart';
-import 'package:e_commerece_website_testing/services/product_service.dart';
+import 'package:e_store/models/product.dart';
+import 'package:e_store/services/product_service.dart';
 
 class ProductsRepository {
   Future<List<Product>> getAllProducts() async {

@@ -1,6 +1,6 @@
-import 'package:e_commerece_website_testing/models/product.dart';
-import 'package:e_commerece_website_testing/utils/responsive.dart';
-import 'package:e_commerece_website_testing/widgets/widgets.dart';
+import 'package:e_store/models/product.dart';
+import 'package:e_store/utils/responsive.dart';
+import 'package:e_store/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultsGrid extends StatelessWidget {

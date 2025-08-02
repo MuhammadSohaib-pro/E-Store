@@ -1,5 +1,5 @@
-import 'package:e_commerece_website_testing/models/product.dart';
-import 'package:e_commerece_website_testing/screens/product_detail/components/components.dart';
+import 'package:e_store/models/product.dart';
+import 'package:e_store/screens/product_detail/components/components.dart';
 import 'package:flutter/material.dart';
 
 class ProductInfoSection extends StatelessWidget {

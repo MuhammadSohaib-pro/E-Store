@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/blocs/products/products_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/products/products_event.dart';
-import 'package:e_commerece_website_testing/blocs/products/products_state.dart';
-import 'package:e_commerece_website_testing/screens/home/components/home_error_widget.dart';
-import 'package:e_commerece_website_testing/utils/responsive.dart';
-import 'package:e_commerece_website_testing/widgets/loading_widget.dart';
-import 'package:e_commerece_website_testing/widgets/product_grid.dart';
+import 'package:e_store/blocs/products/products_bloc.dart';
+import 'package:e_store/blocs/products/products_event.dart';
+import 'package:e_store/blocs/products/products_state.dart';
+import 'package:e_store/screens/home/components/home_error_widget.dart';
+import 'package:e_store/utils/responsive.dart';
+import 'package:e_store/widgets/loading_widget.dart';
+import 'package:e_store/widgets/product_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

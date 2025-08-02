@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/routes/app_router.gr.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
+import 'package:e_store/routes/app_router.gr.dart';
+import 'package:e_store/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
@@ -437,7 +437,7 @@ class _OrderSuccessScreenState extends State<OrderSuccessScreen>
                       width: double.infinity,
                       child: ElevatedButton.icon(
                         onPressed: () {
-                         AutoRouter.of(context).replaceAll([HomeRoute()]);
+                          AutoRouter.of(context).replaceAll([HomeRoute()]);
                         },
                         icon: const Icon(Icons.shopping_bag_outlined),
                         label: const Text(

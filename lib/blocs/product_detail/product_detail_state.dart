@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/models/models.dart';
 
 abstract class ProductDetailState extends Equatable {
   @override
@@ -49,21 +49,22 @@ class ProductDetailLoaded extends ProductDetailState {
       isFavorite: isFavorite ?? this.isFavorite,
       showFullDescription: showFullDescription ?? this.showFullDescription,
       relatedProducts: relatedProducts ?? this.relatedProducts,
-      relatedProductsLoading: relatedProductsLoading ?? this.relatedProductsLoading,
+      relatedProductsLoading:
+          relatedProductsLoading ?? this.relatedProductsLoading,
     );
   }
 
   @override
   List<Object?> get props => [
-        product,
-        productImages,
-        selectedImageIndex,
-        quantity,
-        isFavorite,
-        showFullDescription,
-        relatedProducts,
-        relatedProductsLoading,
-      ];
+    product,
+    productImages,
+    selectedImageIndex,
+    quantity,
+    isFavorite,
+    showFullDescription,
+    relatedProducts,
+    relatedProductsLoading,
+  ];
 }
 
 class ProductDetailError extends ProductDetailState {

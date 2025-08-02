@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_state.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/utils/responsive.dart';
+import 'package:e_store/blocs/cart/cart_bloc.dart';
+import 'package:e_store/blocs/cart/cart_state.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -60,9 +60,7 @@ class ProductDetailAppBar extends StatelessWidget {
             return Stack(
               children: [
                 IconButton(
-                  onPressed: () => AutoRouter.of(
-                    context,
-                  ).pushPath('/cart'),
+                  onPressed: () => AutoRouter.of(context).pushPath('/cart'),
                   icon: const Icon(Icons.shopping_cart),
                   tooltip: 'View cart',
                 ),

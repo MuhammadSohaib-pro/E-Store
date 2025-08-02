@@ -1,6 +1,5 @@
-
 import 'package:equatable/equatable.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/models/models.dart';
 
 abstract class CartState extends Equatable {
   @override
@@ -57,15 +56,15 @@ class CartLoaded extends CartState {
 
   @override
   List<Object?> get props => [
-        items,
-        subtotal,
-        shipping,
-        tax,
-        discount,
-        total,
-        promoCode,
-        itemCount,
-      ];
+    items,
+    subtotal,
+    shipping,
+    tax,
+    discount,
+    total,
+    promoCode,
+    itemCount,
+  ];
 }
 
 class CartError extends CartState {
@@ -120,13 +119,13 @@ class CartPromoError extends CartState {
 class CartItemAddedSuccess extends CartState {
   final Product product;
   final int quantity;
-  
+
   CartItemAddedSuccess({required this.product, required this.quantity});
 }
 
 class CartItemRemovedSuccess extends CartState {
   final String productId;
   final String productName;
-  
+
   CartItemRemovedSuccess({required this.productId, required this.productName});
 }

@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_event.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_state.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
-import 'package:e_commerece_website_testing/routes/app_router.gr.dart';
-import 'package:e_commerece_website_testing/screens/cart/components/components.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
-import 'package:e_commerece_website_testing/widgets/widgets.dart';
+import 'package:e_store/blocs/cart/cart_bloc.dart';
+import 'package:e_store/blocs/cart/cart_event.dart';
+import 'package:e_store/blocs/cart/cart_state.dart';
+import 'package:e_store/models/models.dart';
+import 'package:e_store/routes/app_router.gr.dart';
+import 'package:e_store/screens/cart/components/components.dart';
+import 'package:e_store/utils/utils.dart';
+import 'package:e_store/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -228,8 +228,7 @@ class _CartScreenState extends State<CartScreen>
             ),
             const SizedBox(height: 32),
             ElevatedButton.icon(
-              onPressed:
-                  () => AutoRouter.of(context).replaceAll([HomeRoute()]),
+              onPressed: () => AutoRouter.of(context).replaceAll([HomeRoute()]),
               icon: const Icon(Icons.shopping_bag_outlined),
               label: const Text('Start Shopping'),
               style: ElevatedButton.styleFrom(

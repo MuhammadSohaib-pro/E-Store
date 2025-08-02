@@ -1,7 +1,7 @@
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/product_specifications/product_specifications_state.dart';
-import 'package:e_commerece_website_testing/repositories/product_detail_repository.dart';
-import 'package:e_commerece_website_testing/screens/product_detail/components/all_reviews_sheet.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_bloc.dart';
+import 'package:e_store/blocs/product_specifications/product_specifications_state.dart';
+import 'package:e_store/repositories/product_detail_repository.dart';
+import 'package:e_store/screens/product_detail/components/all_reviews_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -15,13 +15,16 @@ class ProductReviewsSection extends StatelessWidget {
         if (state is ProductSpecificationsLoaded) {
           return _buildReviews(context, state);
         }
-        
+
         return const SizedBox.shrink();
       },
     );
   }
 
-  Widget _buildReviews(BuildContext context, ProductSpecificationsLoaded state) {
+  Widget _buildReviews(
+    BuildContext context,
+    ProductSpecificationsLoaded state,
+  ) {
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(24),
@@ -70,9 +73,7 @@ class ProductReviewsSection extends StatelessWidget {
               ),
             ),
           ] else
-            const Center(
-              child: Text('No reviews yet'),
-            ),
+            const Center(child: Text('No reviews yet')),
         ],
       ),
     );
@@ -83,10 +84,7 @@ class ProductReviewsSection extends StatelessWidget {
       children: [
         const Text(
           '4.5',
-          style: TextStyle(
-            fontSize: 48,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
         ),
         const SizedBox(width: 16),
         Expanded(
@@ -147,7 +145,9 @@ class ProductReviewsSection extends StatelessWidget {
                         Row(
                           children: List.generate(5, (index) {
                             return Icon(
-                              index < review.rating ? Icons.star : Icons.star_border,
+                              index < review.rating
+                                  ? Icons.star
+                                  : Icons.star_border,
                               color: Colors.amber,
                               size: 14,
                             );
@@ -181,7 +181,7 @@ class ProductReviewsSection extends StatelessWidget {
   String _formatDate(DateTime date) {
     final now = DateTime.now();
     final difference = now.difference(date);
-    
+
     if (difference.inDays > 0) {
       return '${difference.inDays} days ago';
     } else if (difference.inHours > 0) {

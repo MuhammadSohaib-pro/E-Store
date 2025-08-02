@@ -1,7 +1,7 @@
-import 'package:e_commerece_website_testing/blocs/newsletter/newsletter_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/newsletter/newsletter_event.dart';
-import 'package:e_commerece_website_testing/blocs/newsletter/newsletter_state.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
+import 'package:e_store/blocs/newsletter/newsletter_bloc.dart';
+import 'package:e_store/blocs/newsletter/newsletter_event.dart';
+import 'package:e_store/blocs/newsletter/newsletter_state.dart';
+import 'package:e_store/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

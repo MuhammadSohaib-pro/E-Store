@@ -1,7 +1,7 @@
-import 'package:e_commerece_website_testing/blocs/newsletter/newsletter_event.dart';
-import 'package:e_commerece_website_testing/blocs/newsletter/newsletter_state.dart';
+import 'package:e_store/blocs/newsletter/newsletter_event.dart';
+import 'package:e_store/blocs/newsletter/newsletter_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:e_commerece_website_testing/repositories/home_repository.dart';
+import 'package:e_store/repositories/home_repository.dart';
 
 class NewsletterBloc extends Bloc<NewsletterEvent, NewsletterState> {
   final HomeRepository _homeRepository;

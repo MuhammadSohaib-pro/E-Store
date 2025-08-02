@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:e_commerece_website_testing/repositories/home_repository.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/repositories/home_repository.dart';
+import 'package:e_store/models/models.dart';
 import 'home_event.dart';
 import 'home_state.dart';
 
@@ -73,21 +73,18 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(currentState.copyWith(isRefreshing: true));
 
     try {
-
       // Reload all data
       final futures = await Future.wait([
         _homeRepository.getFeaturedProducts(),
         _homeRepository.getHomeStatistics(),
         _homeRepository.getPromoBanners(),
         _homeRepository.getHeroImages(),
-
       ]);
 
       final allProducts = futures[0] as List<Product>;
       final statistics = futures[1] as HomeStatistics;
       final promoBanners = futures[2] as List<PromoBanner>;
       final heroImages = futures[3] as List<String>;
-
 
       emit(
         HomeLoaded(

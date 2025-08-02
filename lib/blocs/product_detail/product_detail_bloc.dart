@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:e_commerece_website_testing/repositories/product_detail_repository.dart';
-import 'package:e_commerece_website_testing/repositories/cart_repository.dart';
+import 'package:e_store/repositories/product_detail_repository.dart';
+import 'package:e_store/repositories/cart_repository.dart';
 import 'product_detail_event.dart';
 import 'product_detail_state.dart';
 

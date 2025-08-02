@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/cart/cart_state.dart';
-import 'package:e_commerece_website_testing/routes/app_router.gr.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
+import 'package:e_store/blocs/cart/cart_bloc.dart';
+import 'package:e_store/blocs/cart/cart_state.dart';
+import 'package:e_store/routes/app_router.gr.dart';
+import 'package:e_store/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

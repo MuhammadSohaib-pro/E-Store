@@ -1,12 +1,10 @@
-import 'package:e_commerece_website_testing/blocs/cart/cart_state.dart';
+import 'package:e_store/blocs/cart/cart_state.dart';
 import 'package:flutter/material.dart';
+
 class CartHeader extends StatelessWidget {
   final CartLoaded state;
 
-  const CartHeader({
-    super.key,
-    required this.state,
-  });
+  const CartHeader({super.key, required this.state});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +24,9 @@ class CartHeader extends StatelessWidget {
           const SizedBox(width: 12),
           Text(
             'Cart Items',
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+            style: Theme.of(
+              context,
+            ).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
           ),
           const Spacer(),
           Container(

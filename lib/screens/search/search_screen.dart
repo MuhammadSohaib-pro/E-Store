@@ -1,10 +1,10 @@
 // lib/screens/search_screen.dart
 import 'package:auto_route/annotations.dart';
-import 'package:e_commerece_website_testing/blocs/search/search_bloc.dart';
-import 'package:e_commerece_website_testing/blocs/search/search_event.dart';
-import 'package:e_commerece_website_testing/blocs/search/search_state.dart';
-import 'package:e_commerece_website_testing/screens/search/components/components.dart';
-import 'package:e_commerece_website_testing/widgets/widgets.dart';
+import 'package:e_store/blocs/search/search_bloc.dart';
+import 'package:e_store/blocs/search/search_event.dart';
+import 'package:e_store/blocs/search/search_state.dart';
+import 'package:e_store/screens/search/components/components.dart';
+import 'package:e_store/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -58,7 +58,7 @@ class _SearchScreenState extends State<SearchScreen>
 
   void _initializeSearch() {
     context.read<SearchBloc>().add(SearchInitialized());
-    
+
     // Auto-focus search field
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _searchFocusNode.requestFocus();
@@ -232,7 +232,9 @@ class _SearchScreenState extends State<SearchScreen>
   }
 
   void _applyFilters(List<String> filters) {
-    context.read<SearchBloc>().add(SearchFilterApplied(selectedFilters: filters));
+    context.read<SearchBloc>().add(
+      SearchFilterApplied(selectedFilters: filters),
+    );
   }
 
   void _changeSorting(String sortBy) {

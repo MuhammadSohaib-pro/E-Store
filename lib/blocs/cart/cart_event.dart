@@ -1,4 +1,4 @@
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/models/models.dart';
 
 abstract class CartEvent {}
 

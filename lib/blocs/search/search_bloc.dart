@@ -1,8 +1,7 @@
-
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:e_commerece_website_testing/repositories/search_repository.dart';
+import 'package:e_store/repositories/search_repository.dart';
 import 'search_event.dart';
 import 'search_state.dart';
 

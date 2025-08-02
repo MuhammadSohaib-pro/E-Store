@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:e_commerece_website_testing/repositories/cart_repository.dart';
-import 'package:e_commerece_website_testing/models/models.dart';
+import 'package:e_store/repositories/cart_repository.dart';
+import 'package:e_store/models/models.dart';
 import 'cart_event.dart';
 import 'cart_state.dart';
 
@@ -39,15 +39,14 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) async {
     try {
       emit(CartItemAdding());
-      
+
       await _cartRepository.addItem(event.product, event.quantity);
-      
+
       // Emit success state first
-      emit(CartItemAddedSuccess(
-        product: event.product,
-        quantity: event.quantity,
-      ));
-      
+      emit(
+        CartItemAddedSuccess(product: event.product, quantity: event.quantity),
+      );
+
       // Then load updated cart
       final items = await _cartRepository.getCartItems();
       final cartState = _calculateCartTotals(items);
@@ -68,15 +67,17 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         (item) => item.product.id == event.productId,
         orElse: () => throw Exception('Product not found in cart'),
       );
-      
+
       await _cartRepository.removeItem(event.productId);
-      
+
       // Emit success state first
-      emit(CartItemRemovedSuccess(
-        productId: event.productId,
-        productName: item.product.name,
-      ) );
-      
+      emit(
+        CartItemRemovedSuccess(
+          productId: event.productId,
+          productName: item.product.name,
+        ),
+      );
+
       // Then load updated cart
       final updatedItems = await _cartRepository.getCartItems();
       final cartState = _calculateCartTotals(updatedItems);
@@ -92,7 +93,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) async {
     try {
       await _cartRepository.updateQuantity(event.productId, event.quantity);
-      
+
       final items = await _cartRepository.getCartItems();
       final cartState = _calculateCartTotals(items);
       emit(cartState);
@@ -107,7 +108,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) async {
     try {
       await _cartRepository.clearCart();
-      
+
       final items = await _cartRepository.getCartItems();
       final cartState = _calculateCartTotals(items);
       emit(cartState);
@@ -122,22 +123,24 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) async {
     try {
       final isValid = await _cartRepository.validatePromoCode(event.promoCode);
-      
+
       if (isValid) {
         final items = await _cartRepository.getCartItems();
         final subtotal = _cartRepository.calculateSubtotal();
         final discount = _cartRepository.calculateDiscount(subtotal);
-        
-        emit(CartPromoApplied(
-          promoCode: event.promoCode,
-          discountAmount: discount,
-        ));
-        
+
+        emit(
+          CartPromoApplied(
+            promoCode: event.promoCode,
+            discountAmount: discount,
+          ),
+        );
+
         final cartState = _calculateCartTotals(items);
         emit(cartState);
       } else {
         emit(CartPromoError(message: 'Invalid promo code'));
-        
+
         // Return to current cart state
         final items = await _cartRepository.getCartItems();
         final cartState = _calculateCartTotals(items);
@@ -154,7 +157,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   ) async {
     try {
       await _cartRepository.removePromoCode();
-      
+
       final items = await _cartRepository.getCartItems();
       final cartState = _calculateCartTotals(items);
       emit(cartState);
@@ -166,12 +169,17 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   CartLoaded _calculateCartTotals(List<CartItem> items) {
     const double shipping = 0.0;
     const double tax = 0.0;
-    
+
     final subtotal = _cartRepository.calculateSubtotal();
     final discount = _cartRepository.calculateDiscount(subtotal);
-    final total = _cartRepository.calculateTotal(subtotal, shipping, tax, discount);
+    final total = _cartRepository.calculateTotal(
+      subtotal,
+      shipping,
+      tax,
+      discount,
+    );
     final itemCount = _cartRepository.itemCount;
-    
+
     return CartLoaded(
       items: items,
       subtotal: subtotal,

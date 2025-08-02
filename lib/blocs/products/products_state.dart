@@ -1,4 +1,4 @@
-import 'package:e_commerece_website_testing/models/product.dart';
+import 'package:e_store/models/product.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ProductsState extends Equatable {

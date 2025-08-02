@@ -1,5 +1,5 @@
-import 'package:e_commerece_website_testing/screens/product_detail/components/components.dart';
-import 'package:e_commerece_website_testing/utils/utils.dart';
+import 'package:e_store/screens/product_detail/components/components.dart';
+import 'package:e_store/utils/utils.dart';
 import 'package:flutter/material.dart';
 
 class ProductImageGallery extends StatelessWidget {
@@ -73,7 +73,7 @@ class ProductImageGallery extends StatelessWidget {
 
   Widget _buildImageIndicators() {
     if (images.length <= 1) return const SizedBox.shrink();
-    
+
     return Positioned(
       bottom: 20,
       left: 0,
@@ -87,9 +87,10 @@ class ProductImageGallery extends StatelessWidget {
             width: selectedIndex == index ? 24 : 8,
             height: 8,
             decoration: BoxDecoration(
-              color: selectedIndex == index
-                  ? Colors.white
-                  : Colors.white.withValues(alpha: 0.5),
+              color:
+                  selectedIndex == index
+                      ? Colors.white
+                      : Colors.white.withValues(alpha: 0.5),
               borderRadius: BorderRadius.circular(4),
             ),
           );
@@ -133,18 +134,16 @@ class ProductImageGallery extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: selectedIndex == index
-                      ? Theme.of(context).primaryColor
-                      : Colors.grey.shade300,
+                  color:
+                      selectedIndex == index
+                          ? Theme.of(context).primaryColor
+                          : Colors.grey.shade300,
                   width: 2,
                 ),
               ),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  images[index],
-                  fit: BoxFit.cover,
-                ),
+                child: Image.network(images[index], fit: BoxFit.cover),
               ),
             ),
           );
@@ -157,10 +156,9 @@ class ProductImageGallery extends StatelessWidget {
     showDialog(
       context: context,
       barrierColor: Colors.black87,
-      builder: (context) => ImageViewerDialog(
-        images: images,
-        initialIndex: selectedIndex,
-      ),
+      builder:
+          (context) =>
+              ImageViewerDialog(images: images, initialIndex: selectedIndex),
     );
   }
 }
